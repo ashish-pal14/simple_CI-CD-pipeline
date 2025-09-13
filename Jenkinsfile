@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         AWS_REGION   = "us-east-1"
-        AWS_ACCOUNT  = "123456789012"  // replace with your AWS Account ID
+        AWS_ACCOUNT  = "294991709829"  // replace with your AWS Account ID
         ECR_REPO     = "${AWS_ACCOUNT}.dkr.ecr.${AWS_REGION}.amazonaws.com/devops-task"
         IMAGE_NAME   = "devops-task"
         CLUSTER_NAME = "devops-cluster"   // replace with your ECS cluster
@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'dev', url: 'https://github.com/<your-username>/devops-task.git'
+                git branch: 'dev', url: 'https://github.com/ashish-pal14/simple_CI-CD-pipeline.git'
             }
         }
 
