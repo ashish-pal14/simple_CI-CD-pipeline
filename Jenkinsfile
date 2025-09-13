@@ -3,11 +3,13 @@ pipeline {
 
     environment {
         AWS_REGION   = "us-east-1"
-        AWS_ACCOUNT  = "294991709829"  // replace with your AWS Account ID
+        AWS_ACCOUNT  = "294991709829"
         ECR_REPO     = "${AWS_ACCOUNT}.dkr.ecr.${AWS_REGION}.amazonaws.com/devops-task"
         IMAGE_NAME   = "devops-task"
-        CLUSTER_NAME = "devops-cluster"   // replace with your ECS cluster
-        SERVICE_NAME = "devops-service"   // replace with your ECS service
+        IMAGE_TAG    = "$BUILD_NUMBER"
+        IMAGE_URI    = "${ECR_REPO}:${IMAGE_TAG}"
+        CLUSTER_NAME = "devops-cluster"
+        SERVICE_NAME = "devops-service"
     }
 
     stages {
@@ -27,19 +29,20 @@ pipeline {
         stage('Dockerize') {
             steps {
                 script {
-                    sh 'docker build -t $IMAGE_NAME:$BUILD_NUMBER .'
+                    sh "docker build -t ${IMAGE_URI} -t ${ECR_REPO}:latest ."
                 }
             }
         }
 
         stage('Push to ECR') {
             steps {
-                withAWS(region: "${AWS_REGION}", credentials: 'aws-creds') {
+                withAWS(credentials: 'aws-creds', region: "${AWS_REGION}") {
                     script {
                         sh """
-                        aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT.dkr.ecr.$AWS_REGION.amazonaws.com
-                        docker tag $IMAGE_NAME:$BUILD_NUMBER $ECR_REPO:$BUILD_NUMBER
-                        docker push $ECR_REPO:$BUILD_NUMBER
+                        aws ecr get-login-password --region ${AWS_REGION} | \
+                        docker login --username AWS --password-stdin ${ECR_REPO}
+                        docker push ${IMAGE_URI}
+                        docker push ${ECR_REPO}:latest
                         """
                     }
                 }
@@ -52,10 +55,10 @@ pipeline {
                     script {
                         sh """
                         aws ecs update-service \
-                          --cluster $CLUSTER_NAME \
-                          --service $SERVICE_NAME \
+                          --cluster ${CLUSTER_NAME} \
+                          --service ${SERVICE_NAME} \
                           --force-new-deployment \
-                          --region $AWS_REGION
+                          --region ${AWS_REGION}
                         """
                     }
                 }
@@ -63,4 +66,3 @@ pipeline {
         }
     }
 }
-
