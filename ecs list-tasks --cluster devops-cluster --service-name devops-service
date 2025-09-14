@@ -1,0 +1,248 @@
+{
+    "service": {
+        "serviceArn": "arn:aws:ecs:us-east-1:294991709829:service/devops-cluster/devops-service",
+        "serviceName": "devops-service",
+        "clusterArn": "arn:aws:ecs:us-east-1:294991709829:cluster/devops-cluster",
+        "loadBalancers": [],
+        "serviceRegistries": [],
+        "status": "ACTIVE",
+        "desiredCount": 1,
+        "runningCount": 0,
+        "pendingCount": 0,
+        "launchType": "FARGATE",
+        "platformVersion": "LATEST",
+        "platformFamily": "Linux",
+        "taskDefinition": "arn:aws:ecs:us-east-1:294991709829:task-definition/devops-task:5",
+        "deploymentConfiguration": {
+            "deploymentCircuitBreaker": {
+                "enable": false,
+                "rollback": false
+            },
+            "maximumPercent": 200,
+            "minimumHealthyPercent": 100,
+            "strategy": "ROLLING",
+            "bakeTimeInMinutes": 0
+        },
+        "deployments": [
+            {
+                "id": "ecs-svc/6502204145904277519",
+                "status": "PRIMARY",
+                "taskDefinition": "arn:aws:ecs:us-east-1:294991709829:task-definition/devops-task:5",
+                "desiredCount": 0,
+                "pendingCount": 0,
+                "runningCount": 0,
+                "failedTasks": 0,
+                "createdAt": "2025-09-13T18:14:20.993000+00:00",
+                "updatedAt": "2025-09-13T18:14:20.993000+00:00",
+                "launchType": "FARGATE",
+                "platformVersion": "1.4.0",
+                "platformFamily": "Linux",
+                "networkConfiguration": {
+                    "awsvpcConfiguration": {
+                        "subnets": [
+                            "subnet-0ce97e52bbfcc38dc",
+                            "subnet-0d3551bd7f317a361"
+                        ],
+                        "securityGroups": [
+                            "sg-09c26b53cebf7a86d"
+                        ],
+                        "assignPublicIp": "ENABLED"
+                    }
+                },
+                "rolloutState": "IN_PROGRESS",
+                "rolloutStateReason": "ECS deployment ecs-svc/6502204145904277519 in progress."
+            },
+            {
+                "id": "ecs-svc/6779472012022885764",
+                "status": "ACTIVE",
+                "taskDefinition": "arn:aws:ecs:us-east-1:294991709829:task-definition/devops-task:4",
+                "desiredCount": 1,
+                "pendingCount": 0,
+                "runningCount": 0,
+                "failedTasks": 0,
+                "createdAt": "2025-09-13T18:02:11.859000+00:00",
+                "updatedAt": "2025-09-13T18:13:52.350000+00:00",
+                "launchType": "FARGATE",
+                "platformVersion": "1.4.0",
+                "platformFamily": "Linux",
+                "networkConfiguration": {
+                    "awsvpcConfiguration": {
+                        "subnets": [
+                            "subnet-0ce97e52bbfcc38dc",
+                            "subnet-0d3551bd7f317a361"
+                        ],
+                        "securityGroups": [
+                            "sg-09c26b53cebf7a86d"
+                        ],
+                        "assignPublicIp": "ENABLED"
+                    }
+                },
+                "rolloutState": "COMPLETED",
+                "rolloutStateReason": "ECS deployment ecs-svc/6779472012022885764 completed."
+            }
+        ],
+        "roleArn": "arn:aws:iam::294991709829:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+        "events": [
+            {
+                "id": "e89ad2cd-21ac-4e41-8bf9-4432de264fe5",
+                "createdAt": "2025-09-13T18:13:52.356000+00:00",
+                "message": "(service devops-service) has reached a steady state."
+            },
+            {
+                "id": "db8a9630-20d0-4f5c-825f-2ea436573161",
+                "createdAt": "2025-09-13T18:13:24.148000+00:00",
+                "message": "(service devops-service) has started 1 tasks: (task ffac3b18136748a0a5a80926eb3caa75)."
+            },
+            {
+                "id": "2047070e-eceb-4b5d-a8b5-813526958972",
+                "createdAt": "2025-09-13T18:12:53.152000+00:00",
+                "message": "(service devops-service) has reached a steady state."
+            },
+            {
+                "id": "e60e42f0-c5f4-410a-9e71-95d2442b70fc",
+                "createdAt": "2025-09-13T18:12:35.313000+00:00",
+                "message": "(service devops-service) has started 1 tasks: (task 8cbd2204ace742a5851a7d64c9abb794)."
+            },
+            {
+                "id": "6f187db8-80de-48b5-8923-6a151a13180e",
+                "createdAt": "2025-09-13T18:12:04.765000+00:00",
+                "message": "(service devops-service) has reached a steady state."
+            },
+            {
+                "id": "df544cfd-23dd-4346-9dcd-c34a2cd5a294",
+                "createdAt": "2025-09-13T18:11:47.156000+00:00",
+                "message": "(service devops-service) has started 1 tasks: (task 81d623c665cc4774bcccc48101a41104)."
+            },
+            {
+                "id": "35badb1d-dd2e-4a29-9e2d-653aeb29c9a9",
+                "createdAt": "2025-09-13T18:11:17.341000+00:00",
+                "message": "(service devops-service) has reached a steady state."
+            },
+            {
+                "id": "a8590b5a-863b-4458-bcb3-5cd040fca60f",
+                "createdAt": "2025-09-13T18:10:47.975000+00:00",
+                "message": "(service devops-service) has started 1 tasks: (task 9d64fb9deace477fb4a1014a8dac89d5)."
+            },
+            {
+                "id": "3b499498-3d05-414e-9b81-44d9c6a80a70",
+                "createdAt": "2025-09-13T18:10:17.569000+00:00",
+                "message": "(service devops-service) has reached a steady state."
+            },
+            {
+                "id": "94448db7-e979-40fe-ba5f-3834fda3be91",
+                "createdAt": "2025-09-13T18:09:58.954000+00:00",
+                "message": "(service devops-service) has started 1 tasks: (task 58419f744634438c93731dce2715b5e5)."
+            },
+            {
+                "id": "0e2d2b95-e2e3-40ba-b3bc-f723fbcd12b0",
+                "createdAt": "2025-09-13T18:09:27.807000+00:00",
+                "message": "(service devops-service) has reached a steady state."
+            },
+            {
+                "id": "001e1544-1448-457a-bbd2-c582ed320ed3",
+                "createdAt": "2025-09-13T18:08:39.075000+00:00",
+                "message": "(service devops-service) has started 1 tasks: (task b8d399e8e7b44f2180c96ad1535a0c95)."
+            },
+            {
+                "id": "81b73540-65ce-4f28-8d02-4961d9ba0f24",
+                "createdAt": "2025-09-13T18:08:06.838000+00:00",
+                "message": "(service devops-service) has reached a steady state."
+            },
+            {
+                "id": "189e16b7-2db7-4862-a199-c7636513c824",
+                "createdAt": "2025-09-13T18:07:40.180000+00:00",
+                "message": "(service devops-service) has started 1 tasks: (task 142264380b3648db8fee10c826cc5474)."
+            },
+            {
+                "id": "ccfbf802-20bb-42b2-b1a2-deaecddb93c9",
+                "createdAt": "2025-09-13T18:07:06.867000+00:00",
+                "message": "(service devops-service) has reached a steady state."
+            },
+            {
+                "id": "1fa6efab-5641-4374-aedb-33b0cf1ca217",
+                "createdAt": "2025-09-13T18:06:39.779000+00:00",
+                "message": "(service devops-service) has started 1 tasks: (task e34c510cfd624edc86eb9a6366deff5f)."
+            },
+            {
+                "id": "088e555f-ba1e-44f3-95bf-16b8ce0eabee",
+                "createdAt": "2025-09-13T18:06:08.206000+00:00",
+                "message": "(service devops-service) has reached a steady state."
+            },
+            {
+                "id": "9f50f895-acca-42ac-b5fe-8af9b0f44ae1",
+                "createdAt": "2025-09-13T18:05:50.417000+00:00",
+                "message": "(service devops-service) has started 1 tasks: (task 4d7f633b669e4573a211acbb7c3dac64)."
+            },
+            {
+                "id": "e5cf58d6-2d6a-452d-88ac-e84c8b190e53",
+                "createdAt": "2025-09-13T18:05:17.674000+00:00",
+                "message": "(service devops-service) has reached a steady state."
+            },
+            {
+                "id": "032201d2-7166-4a04-9dfd-1745b9097fad",
+                "createdAt": "2025-09-13T18:04:59.507000+00:00",
+                "message": "(service devops-service) has started 1 tasks: (task d70ccb5de9d94a6ca805a251683afe2f)."
+            },
+            {
+                "id": "f5a66892-6b98-468b-a709-55d04f865bf6",
+                "createdAt": "2025-09-13T18:04:27.441000+00:00",
+                "message": "(service devops-service) has reached a steady state."
+            },
+            {
+                "id": "56a5cc58-25a2-42f3-8527-d0bc977706dd",
+                "createdAt": "2025-09-13T18:03:59.894000+00:00",
+                "message": "(service devops-service) has started 1 tasks: (task 2830c952683c446fa0c06dbd057901e0)."
+            },
+            {
+                "id": "d0053a8a-3654-432d-9a4a-3e5268338b1b",
+                "createdAt": "2025-09-13T18:03:28.345000+00:00",
+                "message": "(service devops-service) has reached a steady state."
+            },
+            {
+                "id": "81246ef7-656b-46a3-a836-7d55f7c4dd64",
+                "createdAt": "2025-09-13T18:03:01.414000+00:00",
+                "message": "(service devops-service) has started 1 tasks: (task 3ac00c727e944af1a5a31138b0c900d6)."
+            },
+            {
+                "id": "d0a4e7d0-727b-490b-aa52-577315d2eedf",
+                "createdAt": "2025-09-13T18:02:49.907000+00:00",
+                "message": "(service devops-service) has reached a steady state."
+            },
+            {
+                "id": "bfae1d3c-8a66-47a9-8619-5b1bd66bad1b",
+                "createdAt": "2025-09-13T18:02:49.906000+00:00",
+                "message": "(service devops-service) (deployment ecs-svc/6779472012022885764) deployment completed."
+            },
+            {
+                "id": "265a9b91-e7a5-4284-b487-059c4a6ec120",
+                "createdAt": "2025-09-13T18:02:30.841000+00:00",
+                "message": "(service devops-service) has started 1 tasks: (task 4a59d041a3dd470b9842a72c0d8627b1)."
+            }
+        ],
+        "createdAt": "2025-09-13T18:02:11.859000+00:00",
+        "placementConstraints": [],
+        "placementStrategy": [],
+        "networkConfiguration": {
+            "awsvpcConfiguration": {
+                "subnets": [
+                    "subnet-0ce97e52bbfcc38dc",
+                    "subnet-0d3551bd7f317a361"
+                ],
+                "securityGroups": [
+                    "sg-09c26b53cebf7a86d"
+                ],
+                "assignPublicIp": "ENABLED"
+            }
+        },
+        "healthCheckGracePeriodSeconds": 0,
+        "schedulingStrategy": "REPLICA",
+        "deploymentController": {
+            "type": "ECS"
+        },
+        "createdBy": "arn:aws:iam::294991709829:user/TERRAFORM",
+        "enableECSManagedTags": false,
+        "propagateTags": "NONE",
+        "enableExecuteCommand": false,
+        "availabilityZoneRebalancing": "ENABLED"
+    }
+}
